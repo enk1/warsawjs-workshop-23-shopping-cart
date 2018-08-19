@@ -26,7 +26,9 @@ class Cart extends Component {
     return (
       <Layout cartSummary={cartSummary}>
         <List
+          data-test-id="cart-items-list"
           className="demo-loadmore-list"
+          data-test-id="card-list"
           itemLayout="horizontal"
           dataSource={cart}
           renderItem={item => (
@@ -45,6 +47,7 @@ class Cart extends Component {
             height: 32,
             lineHeight: "32px"
           }}
+          data-test-id="menu-cart-list"
         >
           {cart.length > 0 && this.renderFooter()}
         </div>

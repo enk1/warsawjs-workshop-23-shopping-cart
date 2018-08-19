@@ -1,25 +1,30 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add("login", (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add("drag", { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add("dismiss", { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This is will overwrite an existing command --
-// Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+Cypress.Commands.add("addFirstProduct", () => {
+  cy.get("[data-test-id=product-list]")
+    .contains("Buy")
+    .click();
+});
+Cypress.Commands.add("selectProduct", number => {
+  cy.get(`[data-test-id=product-list-item-${number}]`)
+    .contains("Buy")
+    .click();
+});
+Cypress.Commands.add("openCart", () => {
+  cy.get("[data-test-id=header-menu]")
+    .contains("Cart")
+    .click();
+});
+Cypress.Commands.add("clickNextInCart", () => {
+  cy.get("[data-test-id=menu-cart-list]")
+    .contains("Next")
+    .click();
+});
+Cypress.Commands.add("clickNextInForm", () => {
+  cy.get("[data-test-id=address-form-menu]")
+    .contains("Next")
+    .click();
+});
+Cypress.Commands.add("clickNextInDelivery", () => {
+  cy.get("[data-test-id=delivery-form]")
+    .contains("Next")
+    .click();
+});

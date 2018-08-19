@@ -79,10 +79,12 @@ class AddressForm extends Component {
           })(this.renderSelect())}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
-          <Button onClick={onBackButtonPress}>Go back</Button>
-          <Button type="primary" htmlType="submit">
-            Next
-          </Button>
+          <div data-test-id="delivery-form">
+            <Button onClick={onBackButtonPress}>Go back</Button>
+            <Button type="primary" htmlType="submit">
+              Next
+            </Button>
+          </div>
         </FormItem>
       </Form>
     );

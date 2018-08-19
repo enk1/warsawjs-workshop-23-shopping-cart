@@ -4,7 +4,7 @@ import { Header, Footer } from "..";
 const { Content } = BaseLayout;
 
 const Layout = ({ children, cartSummary }) => (
-  <BaseLayout className="layout">
+  <BaseLayout className="layout" data-test-id="main-content">
     <Header cartSummary={cartSummary} />
     <Content style={{ padding: "0 50px" }}>
       <div style={{ background: "#fff", padding: 24, minHeight: 280 }}>

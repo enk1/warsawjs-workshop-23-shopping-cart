@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Form, Input, Cascader, Button } from "antd";
-import countries from '../../data/countries.json';
+import countries from "../../data/countries.json";
 
 const FormItem = Form.Item;
 
@@ -99,10 +99,12 @@ class AddressForm extends Component {
           })(<Cascader options={countries} />)}
         </FormItem>
         <FormItem {...tailFormItemLayout}>
-          <Button onClick={onBackButtonPress}>Go back</Button>
-          <Button type="primary" htmlType="submit">
-            Next
-          </Button>
+          <div data-test-id="address-form-menu">
+            <Button onClick={onBackButtonPress}>Go back</Button>
+            <Button type="primary" htmlType="submit">
+              Next
+            </Button>
+          </div>
         </FormItem>
       </Form>
     );

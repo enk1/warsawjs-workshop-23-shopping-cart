@@ -5,7 +5,7 @@ import { ProductItem } from "..";
 
 const ProductsList = ({ products, onAddToCart }) => {
   return (
-    <div>
+    <div data-test-id="product-list">
       {chunk(products, 4).map((row, i) => (
         <Row
           type="flex"
@@ -14,7 +14,11 @@ const ProductsList = ({ products, onAddToCart }) => {
           style={{ paddingBottom: "20px" }}
         >
           {row.map(product => (
-            <Col span={4} key={product.id}>
+            <Col
+              span={4}
+              key={product.id}
+              data-test-id={`product-list-item-${product.id}`}
+            >
               <ProductItem product={product} onAddToCart={onAddToCart} />
             </Col>
           ))}
